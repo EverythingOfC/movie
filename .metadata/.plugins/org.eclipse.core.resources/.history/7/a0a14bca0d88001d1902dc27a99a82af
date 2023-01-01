@@ -1,0 +1,39 @@
+package service;
+
+public class ActionFactory {
+
+	
+	private static ActionFactory instance = new ActionFactory();
+	
+	private ActionFactory() {
+		
+	}
+	
+	public static ActionFactory getInstance() {
+		return instance;
+	}
+	
+	public Action getAction(String command) {
+		Action action = null;
+		
+		if(command.equals("list")) {
+			
+		}else if(command.equals("view")) {
+			
+		}else if(command.equals("update")) {
+			
+		}else if(command.equals("updateForm")) {
+			
+		}else if(command.equals("delete")) {
+			
+		}else if(command.equals("insert")) {
+			
+		}else if(command.equals("insertForm")) {
+			
+		}else if(command.equals("login")) {
+			
+		}
+		
+		return action;
+	}
+}

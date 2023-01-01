@@ -1,0 +1,45 @@
+package service;
+
+public class ActionFactory {
+
+	
+	private static ActionFactory instance = new ActionFactory();
+	
+	private ActionFactory() {
+		
+	}
+	
+	public static ActionFactory getInstance() {
+		return instance;
+	}
+	
+	public Action getAction(String command) {
+		Action action = null;
+		
+		if(command.equals("list")) {	// 리스트
+			
+		}else if(command.equals("view")) {	// 상세
+			
+		}else if(command.equals("update")) {	// 수정
+			
+		}else if(command.equals("updateForm")) {	// 수정 폼
+			
+		}else if(command.equals("delete")) {	// 삭제
+			
+		}else if(command.equals("insert")) {	// 추가
+			
+		}else if(command.equals("insertForm")) {	// 추가 폼
+			
+		}else if(command.equals("login")) {	// 로그인 
+			
+		}else if(command.equals("loginForm")) {	// 로그인 폼
+			
+		}else if(command.equals("sign")) {	// 회원가입
+			
+		}else if(command.equals("signForm")) {	// 회원가입 폼
+			
+		}
+		
+		return action;
+	}
+}

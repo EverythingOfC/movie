@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+*{
+	margin:0 auto;
+	padding:0;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color:black;
+}
+a:hover{
+	color:blue;
+}
+img{
+	border:0;
+}
+
+.title{
+	margin:2vw auto;
+	text-align:center;
+	border:2px solid black;
+	border-radius: 15px;
+	padding:20px 0px;
+	width:60%;
+	background-color: orange;
+}
+
+table{
+	width:70%;
+}
+table, td, th{
+	border:1px solid black;
+}

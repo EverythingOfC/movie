@@ -1,0 +1,19 @@
+package service;
+
+public class ActionFactory {
+
+	
+	private static ActionFactory instance = new ActionFactory();
+	
+	private ActionFactory() {
+		
+	}
+	
+	public static ActionFactory getInstance() {
+		return instance;
+	}
+	
+	public Action getAction() {
+		Action action = null;
+	}
+}

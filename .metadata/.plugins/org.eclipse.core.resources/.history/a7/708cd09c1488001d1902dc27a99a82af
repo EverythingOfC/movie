@@ -1,0 +1,16 @@
+package util;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class JdbcUtil {
+
+	
+	public static Connection getConnection() {
+		Class.forName("oracle.jdbc.driver");
+		DriverManager =
+	}
+	
+	
+}
+
