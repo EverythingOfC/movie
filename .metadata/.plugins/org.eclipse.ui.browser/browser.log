@@ -1,0 +1,19 @@
+
+1월 02, 2023 10:43:57.145 NEW SESSION
+1월 02, 2023 10:43:57.145 [7092:18072:0102/104357.142:ERROR:util.cc(133)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+1월 02, 2023 11:06:54.852 [5448:18676:0102/110654.851:ERROR:util.cc(133)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+1월 02, 2023 11:12:18.866 [20832:4360:0102/111218.864:ERROR:util.cc(133)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+1월 02, 2023 11:16:11.446 [1132:18504:0102/111611.446:ERROR:util.cc(133)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+1월 02, 2023 11:22:29.864 [1132:7440:0102/112229.864:ERROR:page_load_metrics_update_dispatcher.cc(160)] Invalid parse_start 0.586 s for activation_start 0.427845 s
+1월 02, 2023 11:22:29.986 [1132:7440:0102/112229.986:ERROR:page_load_metrics_update_dispatcher.cc(160)] Invalid parse_start 0.586 s for activation_start 0.427845 s
+1월 02, 2023 11:22:30.558 [1132:7440:0102/112230.557:ERROR:page_load_metrics_update_dispatcher.cc(160)] Invalid parse_start 0.586 s for activation_start 0.427845 s
+1월 02, 2023 11:22:31.62 [1132:7440:0102/112231.062:ERROR:page_load_metrics_update_dispatcher.cc(160)] Invalid parse_start 0.586 s for activation_start 0.427845 s
+1월 02, 2023 11:22:31.241 [1132:7440:0102/112231.240:ERROR:page_load_metrics_update_dispatcher.cc(160)] Invalid parse_start 0.586 s for activation_start 0.427845 s
+1월 02, 2023 11:22:31.280 [1132:7440:0102/112231.279:ERROR:page_load_metrics_update_dispatcher.cc(160)] Invalid parse_start 0.586 s for activation_start 0.427845 s
+1월 02, 2023 11:22:31.292 [1132:7440:0102/112231.291:ERROR:page_load_metrics_update_dispatcher.cc(160)] Invalid parse_start 0.586 s for activation_start 0.427845 s
+1월 02, 2023 11:22:34.29 [1132:7440:0102/112234.029:ERROR:page_load_metrics_update_dispatcher.cc(160)] Invalid parse_start 0.586 s for activation_start 0.427845 s
+1월 02, 2023 11:22:34.134 [1132:7440:0102/112234.134:ERROR:page_load_metrics_update_dispatcher.cc(160)] Invalid parse_start 0.586 s for activation_start 0.427845 s
+1월 02, 2023 11:22:34.878 [1132:7440:0102/112234.877:ERROR:page_load_metrics_update_dispatcher.cc(160)] Invalid parse_start 0.586 s for activation_start 0.427845 s
+
+1월 02, 2023 14:18:33.442 NEW SESSION
+1월 02, 2023 14:18:33.442 [11540:5524:0102/141833.439:ERROR:util.cc(133)] Can't create base directory: C:\Program Files\Google\GoogleUpdater

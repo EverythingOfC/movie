@@ -1,0 +1,6 @@
+package dto;
+
+public class PagingDto {
+	
+	private int totalCount;	// 총 게시글 수
+}

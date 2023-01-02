@@ -1,0 +1,173 @@
+@charset "UTF-8";
+
+*{
+	margin: 0 auto;
+}
+
+img{
+	border:0;
+}
+a{
+	text-decoration:none;
+	color:black;
+}
+a:hover{
+	font-weight:bold;
+}
+li{
+	list-style: none;
+}
+
+.title{
+	margin:2vw auto;
+	text-align:center;
+	border:2px solid black;
+	border-radius:10px;
+	background:orange;
+	width:60%;
+	padding:10px 0;
+}
+.main table{
+	width:70%;
+}
+.main td,.main th{
+	padding:10px;
+	border:1px solid black;
+	border-collapse: collapse;	
+}
+
+.insert table td{
+	text-align:center;
+}
+.insert table td input, .i_button input, .insert table td img{
+	padding:8px 15px;
+	font-weight:bold;
+	font-size:14px;
+}
+.insert table{
+	width:50%;
+	font-size:17px;
+}
+.insert td,.insert th{
+	padding:8px;
+	border:1px solid black;
+	border-collapse: collapse;	
+}
+.i_button{
+	margin-top:1vw;
+	width:50%;
+	text-align:center;
+}
+
+
+.login table td{
+	text-align:center;
+}
+.login table td input, .l_button input{
+	padding:11px 15px;
+	font-weight:bold;
+	font-size:14px;
+}
+.login table{
+	width:50%;
+	font-size:17px;
+}
+.login td,.login th{
+	padding:8px;
+	border:1px solid black;
+	border-collapse: collapse;	
+}
+.l_button{
+	margin-top:2vw;
+	width:50%;
+	text-align:center;
+}
+
+
+
+.sign table td{
+	text-align:center;
+}
+
+.sign table td label{
+	display:inline-block;
+	padding:8px 15px;
+	font-size:14px;
+ }
+.sign table td input, .s_button input{
+	padding:8px 15px;
+	font-weight:bold;
+	font-size:14px;
+}
+.sign table{
+	width:50%;
+	font-size:17px;
+}
+.sign td,.sign th{
+	padding:8px;
+	border:1px solid black;
+	border-collapse: collapse;	
+}
+.s_button{
+	margin-top:2vw;
+	width:50%;
+	text-align:center;
+}
+
+
+.update table td{
+	text-align:center;
+}
+.update table td input, .u_button input, .update table td img{
+	padding:8px 15px;
+	font-weight:bold;
+	font-size:14px;
+}
+.update table{
+	width:50%;
+	font-size:17px;
+}
+.update td,.update th{
+	padding:8px;
+	border:1px solid black;
+	border-collapse: collapse;	
+}
+.u_button{
+	margin-top:1vw;
+	width:50%;
+	text-align:center;
+}
+
+
+.view table td{
+	text-align:center;
+}
+.view table td input, .v_button input, .view table td img{
+	padding:8px 15px;
+	font-weight:bold;
+	font-size:14px;
+}
+.view table{
+	width:50%;
+	font-size:17px;
+}
+.view td,.view th{
+	padding:8px;
+	border:1px solid black;
+	border-collapse: collapse;	
+}
+.v_button{
+	margin-top:1vw;
+	width:50%;
+	text-align:center;
+}
+
+.page,.pagination{
+	width:70%;
+	margin-top:2vw;
+	text-align:center;
+}
+.pagination{
+	margin-top:1vw;
+}
+

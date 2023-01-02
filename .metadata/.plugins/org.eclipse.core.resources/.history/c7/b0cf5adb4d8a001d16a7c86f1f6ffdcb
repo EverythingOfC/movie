@@ -1,0 +1,55 @@
+package controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
+import service.Action;
+import service.ActionFactory;
+import service.MovieLoginForm;
+
+@WebServlet("/ms")
+public class ms extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	public ms() {
+		super();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		ServletContext context = request.getServletContext();
+		String path = context.getRealPath("upload");	// 서버에 저장할 경로
+
+		MultipartRequest multi = new MultipartRequest(request, path,5*1024*1024,"UTF-8",new DefaultFileRenamePolicy());
+		String command = multi.getParameter("command");
+		
+		ActionFactory af = ActionFactory.getInstance();
+		
+		if (command != null) {
+			Action ac = af.getAction(command); // 해당 요청에 맞는 액션 객체 리턴
+			System.out.println(command);
+			ac.execute(request, response);
+		} else {
+			new MovieLoginForm().execute(request, response); // 기본 요청은 영화 리스트
+		}
+
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		request.setCharacterEncoding("UTF-8");
+		doGet(request, response);
+	}
+
+}

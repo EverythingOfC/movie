@@ -1,0 +1,8 @@
+package dto;
+
+public class PagingDto {
+	
+	private int totalCount;	// 총 게시글 수
+	private int currentPage;	// 현재 페이지
+	private int totalPage;	// 총 페이지 수
+}
