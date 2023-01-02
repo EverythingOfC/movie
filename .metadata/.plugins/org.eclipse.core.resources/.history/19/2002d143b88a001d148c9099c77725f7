@@ -1,0 +1,61 @@
+package dto;
+
+public class PagingDto {
+	
+	// paging
+	private int totalCount;	// 총 게시글 수 (23)
+	private int currentPage;	// 현재 페이지 (2)
+	private int totalPage;	// 총 페이지 수 ( 5)
+	
+	// pagination
+	private int displayPage = 5;	// 전시될 페이지 수
+	private int displayRow = 5;	// 한 페이지에 표시될 게시글 수
+	private int beginPage;	// 페이징 시작 페이지 수
+	private int endPage;	// 페이징 종료 페이지 수
+	
+	public int getTotalCount() {
+		return totalCount;
+	}
+	public void setTotalCount(int totalCount) {
+		this.totalCount = totalCount;
+	}
+	public int getCurrentPage() {
+		return currentPage;
+	}
+	public void setCurrentPage(int currentPage) {
+		this.currentPage = currentPage;
+	}
+	public int getTotalPage() {
+		return totalPage;
+	}
+	public void setTotalPage(int totalPage) {
+		this.totalPage = totalPage;
+	}
+	public int getDisplayPage() {
+		return displayPage;
+	}
+	public void setDisplayPage(int displayPage) {
+		this.displayPage = displayPage;
+	}
+	public int getDisplayRow() {
+		return displayRow;
+	}
+	public void setDisplayRow(int displayRow) {
+		this.displayRow = displayRow;
+	}
+	public int getBeginPage() {
+		return beginPage;
+	}
+	public void setBeginPage(int beginPage) {
+		this.beginPage = beginPage;
+	}
+	public int getEndPage() {
+		return endPage;
+	}
+	public void setEndPage(int endPage) {
+		this.endPage = endPage;
+	}
+	
+	
+	
+}

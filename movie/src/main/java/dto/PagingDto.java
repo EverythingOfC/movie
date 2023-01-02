@@ -9,7 +9,7 @@ public class PagingDto {
 	
 	// pagination
 	private int displayPage = 5;	// 전시될 페이지 수
-	private int displayRow = 10;	// 한 페이지에 표시될 게시글 수
+	private int displayRow = 7;	// 한 페이지에 표시될 게시글 수
 	private int beginPage;	// 페이징 시작 페이지 수
 	private int endPage;	// 페이징 종료 페이지 수
 	

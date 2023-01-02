@@ -65,11 +65,6 @@
 	</div>
 	
 	<div class="page">
-		<p>전체 게시글 수: <span style="color:red">${paging.getTotalCount() }</span></p>
-	</div>
-	
-	
-	<div class="pagination">
 	
 		<c:set var="page" value="${paging.getCurrentPage() }"/> <!--  현재 페이지 -->
 		<c:set var="beginPage" value="${paging.getBeginPage() }"/>
@@ -77,6 +72,14 @@
 		<c:set var="totalPage" value="${paging.getTotalPage() }"/>
 		<c:set var="url" value="${url }"/>
 		<c:set var="displayPage" value="${paging.getDisplayPage() }"/>
+	
+	
+		<p>전체 게시글 수: <span style="color:red">${paging.getTotalCount() }</span></p>
+		<p>현재 페이지 번호: <span style="color:red">${page }</span></p>
+	</div>
+	
+	
+	<div class="pagination">
 	
 	
 	<!--  처음으로  -->
@@ -96,7 +99,7 @@
 		<c:forEach var="item" varStatus = "status" begin="${beginPage }" end="${endPage }" step = "1">
 		
 		<c:if test="${page == item }">	<!--  현재 페이지는 클릭 못함 -->
-			${item }
+			<span style="font-size:16px; color:red">${item }</span>
 		</c:if>
 		
 		<c:if test="${page != item }">  <!--  현재 페이지가 아니면 클릭 가능 -->

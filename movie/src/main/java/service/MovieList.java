@@ -30,7 +30,7 @@ public class MovieList implements Action {
 		pDto.setTotalCount(mDao.allCount());	// 게시글 총 개수 리턴
 		pDto.setEndPage( ( (int)Math.ceil(pDto.getCurrentPage() / (double) pDto.getDisplayPage())) * pDto.getDisplayPage() );
 		pDto.setBeginPage(pDto.getEndPage() - (pDto.getDisplayPage() - 1));
-		pDto.setTotalPage(  (int)Math.ceil(pDto.getTotalCount() / (double) pDto.getDisplayPage())  );
+		pDto.setTotalPage(  (int)Math.ceil(pDto.getTotalCount() / (double) pDto.getDisplayRow())  );
 		if(pDto.getEndPage() > pDto.getTotalPage()) {	// 마지막 페이지가 총 페이지 수를 넘어설 때
 			pDto.setEndPage(pDto.getTotalPage());	// 마지막 페이지에 총 페이지 수 대입
 		}
