@@ -23,7 +23,7 @@
 	<table>
 		<tr>
 		<th>아이디</th>
-		<td><input type="text" name="id"></td>
+		<td><input type="text" name="id" autofocus></td>
 		</tr>
 		
 		<tr>

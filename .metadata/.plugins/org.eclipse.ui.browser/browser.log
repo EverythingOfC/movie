@@ -17,3 +17,7 @@
 
 1월 02, 2023 14:18:33.442 NEW SESSION
 1월 02, 2023 14:18:33.442 [11540:5524:0102/141833.439:ERROR:util.cc(133)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+
+1월 03, 2023 12:00:26.136 NEW SESSION
+1월 03, 2023 12:00:26.136 [7476:8200:0103/120026.134:ERROR:util.cc(133)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+1월 03, 2023 12:02:37.981 [11632:19208:0103/120237.981:ERROR:util.cc(133)] Can't create base directory: C:\Program Files\Google\GoogleUpdater

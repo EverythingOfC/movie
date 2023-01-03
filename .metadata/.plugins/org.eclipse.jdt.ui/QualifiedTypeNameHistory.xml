@@ -16,4 +16,5 @@
     <fullyQualifiedTypeName name="util.JdbcUtil"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="dto.PagingDto"/>
+    <fullyQualifiedTypeName name="service.MovieSearch"/>
 </qualifiedTypeNameHistroy>

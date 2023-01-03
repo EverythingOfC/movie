@@ -3,7 +3,9 @@
 *{
 	margin: 0 auto;
 }
-
+body{
+	font-size:17px;
+}
 img{
 	border:0;
 }
@@ -19,7 +21,8 @@ li{
 }
 
 .title{
-	margin:2vw auto;
+	margin-top:1vw;
+	margin-bottom:1vw;
 	text-align:center;
 	border:2px solid black;
 	border-radius:10px;
@@ -28,7 +31,7 @@ li{
 	padding:10px 0;
 }
 .main table{
-	width:70%;
+	width:80%;
 }
 .main td,.main th{
 	padding:10px;
@@ -168,6 +171,6 @@ li{
 	text-align:center;
 }
 .pagination{
-	margin-top:1vw;
+	margin-top:2vw;
 }
 

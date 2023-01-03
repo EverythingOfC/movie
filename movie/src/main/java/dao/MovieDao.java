@@ -22,7 +22,7 @@ public class MovieDao {
 		return instance;
 	}
 	
-	public List<MovieDto> selectAllPaging(int curr){	// 현재 페이지 수와 영화 객체를 받아옴. 
+	public List<MovieDto> selectAllPaging(int curr, String search){	// 현재 페이지 수와 영화 객체를 받아옴. 
 	
 		PagingDto paging = new PagingDto();
 		
@@ -37,7 +37,13 @@ public class MovieDao {
 		
 		try {
 			conn = JdbcUtil.getConnection();
-			String url = "SELECT * from ( SELECT ROWNUM AS row_num, movie.* FROM ( SELECT * FROM movie ORDER BY code DESC ) movie ) WHERE row_num >= ? AND row_num <= ?";
+			String url = null;
+			
+			if(search == null) {	// 검색조건이 없는 경우
+				url = "SELECT * from ( SELECT ROWNUM AS row_num, movie.* FROM ( SELECT * FROM movie ORDER BY code DESC ) movie ) WHERE row_num >= ? AND row_num <= ?";
+			}else {	// 검색조건을 위한 where절
+				url = "SELECT * from ( SELECT ROWNUM AS row_num, movie.* FROM ( SELECT * FROM movie " + search + " ORDER BY code DESC ) movie ) WHERE row_num >= ? AND row_num <= ?";
+			}
 			pstmt = conn.prepareStatement(url);
 			pstmt.setInt(1,startNum);
 			pstmt.setInt(2, endNum);
@@ -100,10 +106,15 @@ public class MovieDao {
 	}
 	
 	
-public int allCount(){	// 전체
+public int allCount(String condition){	// 전체
 		
-		String sql = "select * from movie order by code desc";
-		
+	String sql = null;
+	
+	if(condition!=null)
+		sql = "select * from movie "+condition+ " order by code desc";
+	else
+		sql = "select * from movie order by code desc";
+	
 		int count = 0;
 		
 		Connection conn = null;

@@ -1,0 +1,59 @@
+package service;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import dao.MovieDao;
+import dto.MovieDto;
+import dto.PagingDto;
+
+public class MovieList implements Action {
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		// 현재 페이지 설정
+		int curr = 1;	// 현재 페이지 기본 값
+		if(request.getParameter("page") != null) {	// 넘어온 페이지 값이 있는 경우
+			curr = Integer.parseInt(request.getParameter("page"));
+		}
+		PagingDto pDto = new PagingDto();
+		pDto.setCurrentPage(curr);
+		
+		// 전체 페이지 설정
+		MovieDao mDao = MovieDao.getInstance();
+		pDto.setTotalCount(mDao.allCount());	// 게시글 총 개수 리턴
+		pDto.setEndPage( ( (int)Math.ceil(pDto.getCurrentPage() / (double) pDto.getDisplayPage())) * pDto.getDisplayPage() );
+		pDto.setBeginPage(pDto.getEndPage() - (pDto.getDisplayPage() - 1));
+		pDto.setTotalPage(  (int)Math.ceil(pDto.getTotalCount() / (double) pDto.getDisplayRow())  );
+		if(pDto.getEndPage() > pDto.getTotalPage()) {	// 마지막 페이지가 총 페이지 수를 넘어설 때
+			pDto.setEndPage(pDto.getTotalPage());	// 마지막 페이지에 총 페이지 수 대입
+		}
+		// 페이징 처리된 데이터 조회		
+		String url = "/movie/list.jsp";
+		
+		String column = request.getParameter("column");
+		String search = request.getParameter("search");	// 검색어를 받아옴.( null 일수도 있음)
+		
+		List<MovieDto> lMdto = null;
+		
+		if(search == null) {	// 검색조건이 없는 경우
+			lMdto = mDao.selectAllPaging(curr,search);
+		}else {	// 검색조건이 있는 경우
+			String condition = "where "+ column + " like '%"+search+ "%'";	// 검색 조건
+			lMdto = mDao.selectAllPaging(curr,condition);
+		}
+		
+		request.setAttribute("paging", pDto);	// 페이지 데이터 저장
+		request.setAttribute("url","ms?command=list");	// url 정보 저장
+		request.setAttribute("movies", lMdto);	// 리스트 영화 데이터를 세션으로 저장
+		request.setAttribute("search", condition);
+		
+		request.getRequestDispatcher(url).forward(request, response);
+	}
+
+}

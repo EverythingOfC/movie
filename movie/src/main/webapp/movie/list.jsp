@@ -16,10 +16,41 @@
 
 	<div class="main">
 		<table>
-
+			
 			<tr>
-				<td colspan="6"
-					style="border: 0; text-align: right; margin-top: 2vw;">
+				<td colspan="3" style="border:0; text-align:center;">
+				<form action="ms" method="get">
+				<input type="hidden" name="command" value="list">
+				<b>검색 키워드 -> </b>&emsp;
+				<label for="title">제목</label>
+				<input type="radio" name="column" value="title" id="title" checked>&nbsp;
+				
+				<label for="director">감독</label>
+				<input type="radio" name="column" value="director" id="director">&nbsp;
+				
+				<label for="actor">배우</label>
+				<input type="radio" name="column" value="actor" id="actor">&nbsp;
+				
+				<label for="price">가격</label>
+				<input type="radio" name="column" value="price" id ="price">&nbsp;
+				
+				<input type="text" name="search" autofocus style="padding:7px 14px;">
+				<input type="submit" value="검색" style="padding:7px 14px;">
+				
+				</form> 
+				</td>
+				
+				<td colspan="2" style="border:0; text-align:right;">
+				<c:choose>
+					<c:when test="${member.auth eq '1' }">
+					<span style="color:red">${member.name}님</span>(admin)
+					</c:when>
+					<c:otherwise>
+					<span style="color:blue">${member.name}님</span>(user)
+					</c:otherwise>
+				</c:choose>&nbsp;환영합니다.
+				</td>
+				<td style="border: 0; text-align: right; margin-top: 2vw;">
 					
 					<c:if test="${member.auth eq '1' }"><!-- 관리자인 경우에만 -->
 					<a href="ms?command=insertForm">영화등록</a>&nbsp;&nbsp; 
@@ -83,16 +114,22 @@
 	
 	
 	<!--  처음으로  -->
-		<a href="${url}&page=1">
+	<c:if test="${page == 1}">
+		<span> ◁&nbsp; </span>
+	</c:if>
+	
+	<c:if test="${page != 1 }">
+		<a href="${url}&page=1&column=${column }&search=${search}">
 		<span> ◁&nbsp; </span>
 		</a>
-		
+	</c:if>
+	
 	<!--  이전으로 -->	
 		<c:if test="${ page<=1 }">
 				<span>이전</span>
 		</c:if>
 		<c:if test="${ page>1 }">
-			<a href="${url }&page=${page-1}">이전</a>
+			<a href="${url }&page=${page-1}&column=${column }&search=${search}">이전</a>
 		</c:if>
 		
 		<!--  넘버링 부분 -->
@@ -103,7 +140,7 @@
 		</c:if>
 		
 		<c:if test="${page != item }">  <!--  현재 페이지가 아니면 클릭 가능 -->
-			<a href="${url }&page=${item}">${item }</a>
+			<a href="${url }&page=${item}&column=${column }&search=${search}">${item }</a>
 		</c:if>
 		
 		</c:forEach>
@@ -114,14 +151,18 @@
 				<span>다음</span>
 		</c:if>
 		<c:if test="${ page<totalPage }">
-			<a href="${url }&page=${page+1}">다음</a>
+			<a href="${url }&page=${page+1}&column=${column }&search=${search}">다음</a>
 		</c:if>
 		
 	<!-- 마지막으로  -->
-		<a href="${url}&page=${totalPage}">
+	<c:if test="${page == totalPage }">
+		<span> ▷&nbsp; </span>
+	</c:if>
+	<c:if test="${page != totalPage }">
+		<a href="${url}&page=${totalPage}&column=${column }&search=${search}">
 		<span> ▷&nbsp; </span>
 		</a>
-		
+	</c:if>
 	</div>
 </body>
 </html>
